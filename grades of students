@@ -1,0 +1,55 @@
+using System;
+
+class StudentGrades
+{
+    static void Main()
+    {
+        Console.Write("Enter the number of students: ");
+        int numStudents = int.Parse(Console.ReadLine());
+
+        string[] names = new string[numStudents];
+        int[] marks = new int[numStudents];
+        char[] grades = new char[numStudents];
+
+        // Input student names
+        for (int i = 0; i < numStudents; i++)
+        {
+            Console.Write($"Enter name of student #{i + 1}: ");
+            names[i] = Console.ReadLine();
+        }
+
+        // Input marks for each student
+        for (int i = 0; i < numStudents; i++)
+        {
+            Console.Write($"Enter marks for {names[i]}: ");
+            marks[i] = int.Parse(Console.ReadLine());
+        }
+
+        // Calculate grades
+        for (int i = 0; i < numStudents; i++)
+        {
+            grades[i] = CalculateGrade(marks[i]);
+        }
+
+        // Display results
+        Console.WriteLine("\nResults:");
+        for (int i = 0; i < numStudents; i++)
+        {
+            Console.WriteLine($"{i + 1}) {names[i]} : {marks[i]} : {grades[i]}");
+        }
+    }
+
+    static char CalculateGrade(int mark)
+    {
+        if (mark >= 90)
+            return 'A';
+        else if (mark >= 80)
+            return 'B';
+        else if (mark >= 70)
+            return 'C';
+        else if (mark >= 60)
+            return 'D';
+        else
+            return 'F';
+    }
+}
