@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace method_overloading
+{ 
+    class SampleClass
+{
+    public void show(int a)
+    {
+        Console.WriteLine("int value:"+a);
+    }
+    public void show(double b)
+    {
+        Console.WriteLine("float value:" +b);
+    }
+    public void show(string c)
+    {
+        Console.WriteLine("string value:" +c);
+    }
+}
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        SampleClass obj = new SampleClass();
+        obj.show(5);
+        obj.show(10.5);
+        obj.show("good");
+        }
+    }
+}
+
