@@ -1,0 +1,51 @@
+using System;
+
+namespace max_and_min_val
+{
+    class Myclass
+    {
+        int a, b;
+
+        public void set_values(int a, int b)
+        {
+            this.a = a;
+            this.b = b;
+        }
+
+        public void showvalues()
+        {
+            Console.WriteLine("Values are: " + a + ", " + b);
+        }
+
+        public int getmax()
+        {
+            return (a > b) ? a : b;
+        }
+
+        public int getmin()
+        {
+            return (a < b) ? a : b;
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int Firstval, Secondval;
+            Console.WriteLine("Enter any two values:");
+            Firstval = Convert.ToInt32(Console.ReadLine());
+            Secondval = Convert.ToInt32(Console.ReadLine());
+
+            Myclass obj = new Myclass();
+            obj.set_values(Firstval, Secondval);
+
+            obj.showvalues(); // optional
+
+            Console.WriteLine("Maximum value: " + obj.getmax());
+            Console.WriteLine("Minimum value: " + obj.getmin());
+
+            Console.ReadLine(); // To pause the console window
+        }
+    }
+}
